@@ -8,12 +8,18 @@
     "dev": "nodemon src/index.js"
   },
   "dependencies": {
-    "apollo-server": "^2.3.1",
+    "@graphql-tools/graphql-file-loader": "^7.5.16",
+    "@graphql-tools/load": "^7.8.13",
+    "apollo-server": "^3.12.0",
+    "apollo-server-express": "^3.12.0",
     "bcryptjs": "^2.4.3",
-    "graphql": "^14.0.2",
-    "sequelize": "^4.42.0",
-    "sequelize-cli": "^5.4.0",
-    "sqlite3": "^4.0.4"
+    "express": "^4.18.2",
+    "graphql": "^15.8.0",
+    "graphql-tools": "^8.3.19",
+    "nodemon": "^2.0.21",
+    "sequelize": "^6.29.3",
+    "sequelize-cli": "^6.6.0",
+    "sqlite3": "^5.1.4"
   },
   "devDependencies": {}
 }
