@@ -36,14 +36,14 @@ const models = require('../models')
 const { loadDocumentsSync, loadSchemaSync } = require('@graphql-tools/load');
 const { GraphQLFileLoader } = require('@graphql-tools/graphql-file-loader');
 
-// this can also be a glob pattern to match multiple files!
-// const typeDefs = loadDocumentsSync("schema/**/*.graphql", { 
+// // # this can also be a glob pattern to match multiple files! 
+// const typeDefs2 = loadDocumentsSync("schema/**/*.graphql", { 
 //     loaders: [
 //         new GraphQLFileLoader()
 //     ]
 // })
 
-const typeDefs = loadSchemaSync('**/*.graphql', { loaders: [new GraphQLFileLoader()] })
+const typeDefs = loadSchemaSync('**/src/schema/*.graphql', { loaders: [new GraphQLFileLoader()] })
 
 const server = new ApolloServer({
   typeDefs,
@@ -54,3 +54,13 @@ const server = new ApolloServer({
 server
   .listen()
   .then(({ url }) => console.log('Server is running on localhost:4000'))
+
+
+  // folder = './src/schema/*.graphql';
+  // fs.readdir(folder, (err, files) => {
+  //   files.forEach(file => {
+  //     console.log(file);
+  //   });
+  // });
+
+  // const typeDefs3 = loadDocumentsSync(folder, { loaders: [new GraphQLFileLoader()] })
